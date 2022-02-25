@@ -22,6 +22,7 @@ import org.osgi.framework.BundleContext;
 import com.thalaunchclub.childmodule1.Addition;
 import com.thalaunchclub.childmodule1.Subtraction;
 import com.thalaunchclub.childmodule1.Welcome;
+import com.thelaunchclub.childmodule3.Multiplication;
 
 public class Activator implements BundleActivator {
 
@@ -30,6 +31,7 @@ public class Activator implements BundleActivator {
         Welcome.greetings();
         System.out.println(Addition.add());
         System.out.println(Subtraction.sub());
+        System.out.println(Multiplication.multiply());
         Welcome.exit();
     }
 

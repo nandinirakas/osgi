@@ -53,6 +53,11 @@
 			<artifactId>childmodule1</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.thelaunchclub</groupId>
+			<artifactId>childmodule3</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

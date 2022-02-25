@@ -6,7 +6,7 @@ import org.osgi.service.component.annotations.Component;
 public class Welcome {
 
     public static void greetings() {
-        System.out.println("Welcome\nEnter numbers for addition and subtraction");
+        System.out.println("Welcome\nEnter numbers for arithmetic functions");
     }
     
     public static void exit() {

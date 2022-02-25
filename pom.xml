@@ -8,5 +8,6 @@
   <modules>
       <module>childmodule1</module>
       <module>childmodule2</module>
+      <module>childmodule3</module>
   </modules>
 </project>
