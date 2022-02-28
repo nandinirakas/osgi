@@ -2,9 +2,6 @@ package com.thelaunchclub.child1;
 
 import java.util.Scanner;
 
-import org.osgi.service.component.annotations.Component;
-
-@Component
 public class Addition {
     
     public static int add() {
