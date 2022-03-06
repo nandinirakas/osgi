@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="employeeFeature-1.0-SNAPSHOT">
+    <feature version="0.0.0">
+        <bundle>mvn:com.atmo/databaseConnection/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.atmo/exception/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.atmo/main/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.atmo/serviceController/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.atmo/validation/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.atmo/view/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:org.postgresql/postgresql/42.3.1</bundle>
+    </feature>
+</features>
