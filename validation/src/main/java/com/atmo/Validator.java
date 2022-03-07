@@ -1,14 +1,16 @@
 package com.atmo;
 
 import com.atmo.CustomException.DateNotValidException;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
 import java.time.LocalDate;
 
 /**
  * Validation for employee id, name, phone number, joining date, salary.
  */
-public class Validator {
-
+@Component
+public class Validator implements Validation {
     /**
      * Checks whether id contains only numbers.
      *

@@ -7,6 +7,7 @@ import java.util.Scanner;
 import com.atmo.controller.EmployeeController;
 import com.atmo.model.Employee;
 import org.osgi.framework.Bundle;
+import org.osgi.service.component.annotations.Reference;
 
 import javax.swing.*;
 
@@ -14,6 +15,8 @@ public class EmployeeInformation {
 
     private static final Scanner SCANNER = new Scanner(System.in);
     private static Bundle bundleStop;
+    @Reference
+    static Validation validate;
 
     public static void selectChoice() {
 
@@ -41,7 +44,7 @@ public class EmployeeInformation {
                     try {
                         bundleStop.stop();
                     } catch (Exception e) {
-                        System.out.println("uytrew");
+                        System.out.println(e);
                     }
             }
         } while (choice < 5);
@@ -60,7 +63,7 @@ public class EmployeeInformation {
 
         EmployeeInformation.returnToMainMenu(id);
 
-        if (EmployeeController.employeeIdValidation(id)) {
+        if (validate.employeeIdValidation(id)) {
             return Integer.parseInt(id);
         } else {
             System.out.println("Please enter valid id that contains only numbers");
@@ -77,7 +80,7 @@ public class EmployeeInformation {
 
         EmployeeInformation.returnToMainMenu(name);
 
-        if (EmployeeController.employeeNameValidation(name)) {
+        if (validate.employeeNameValidation(name)) {
             return name;
         } else {
             System.out.println("Invalid, Please enter a valid Name");
@@ -94,7 +97,7 @@ public class EmployeeInformation {
 
         EmployeeInformation.returnToMainMenu(salary);
 
-        if (EmployeeController.employeeSalaryValidation(salary)) {
+        if (validate.employeeSalaryValidation(salary)) {
             final double totalSalary = Double.parseDouble(salary);
             double grossSalary = 0;
 
@@ -125,7 +128,7 @@ public class EmployeeInformation {
 
         EmployeeInformation.returnToMainMenu(phoneNumber);
 
-        if (EmployeeController.phoneNumberValidation(phoneNumber)) {
+        if (validate.phoneNumberValidation(phoneNumber)) {
             return phoneNumber;
         } else {
             System.out.println("Please enter valid 10 digit phone number");
@@ -144,7 +147,7 @@ public class EmployeeInformation {
         boolean isValidDate = false;
 
         try {
-            isValidDate = EmployeeController.dateValidation(date);
+            isValidDate = validate.dateValidation(date);
         } catch (CustomException e){
             System.out.println(e);
         }
@@ -163,7 +166,7 @@ public class EmployeeInformation {
     public static String getChoice() {
         final String choice = SCANNER.next().trim();
 
-        if (EmployeeController.validateChoice(choice)) {
+        if (validate.validateChoice(choice)) {
             return choice;
         } else {
             System.out.println("Please enter valid choice between 1 - 5");
