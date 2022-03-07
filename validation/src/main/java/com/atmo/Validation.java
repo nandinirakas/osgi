@@ -1,6 +1,7 @@
 package com.atmo;
 
 public interface Validation {
+
     boolean employeeIdValidation(final String employeeId);
 
     boolean employeeNameValidation(final String employeeName);

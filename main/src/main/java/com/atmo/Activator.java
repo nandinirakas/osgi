@@ -32,5 +32,4 @@ public class Activator implements BundleActivator {
     public void stop(BundleContext context) {
         System.out.println("Stopping main bundle");
     }
-
 }
