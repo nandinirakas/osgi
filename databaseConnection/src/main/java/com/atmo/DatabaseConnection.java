@@ -3,11 +3,13 @@ package com.atmo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import com.atmo.CustomException.ConnectionException;
+import org.osgi.service.component.annotations.Component;
 
 /**
  * Establishment of database connection.
  */
-public class DatabaseConnection {
+@Component
+public class DatabaseConnection implements DatabaseConnect {
 
     private static final String JDBC_URL = "jdbc:postgresql://localhost:2020/employee";
     private static final String DATABASE_NAME = "postgres";

@@ -7,6 +7,11 @@
         <bundle>mvn:com.atmo/serviceController/1.0-SNAPSHOT</bundle>
         <bundle>mvn:com.atmo/validation/1.0-SNAPSHOT</bundle>
         <bundle>mvn:com.atmo/view/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:org.osgi/org.osgi.namespace.extender/1.0.1</bundle>
+        <bundle>mvn:org.osgi/org.osgi.service.component.annotations/1.5.0</bundle>
+        <bundle>mvn:org.osgi/org.osgi.util.function/1.0.0</bundle>
+        <bundle>mvn:org.osgi/org.osgi.util.promise/1.0.0</bundle>
+        <bundle>mvn:org.osgi/osgi.annotation/8.0.1</bundle>
         <bundle>mvn:org.postgresql/postgresql/42.3.1</bundle>
     </feature>
 </features>
