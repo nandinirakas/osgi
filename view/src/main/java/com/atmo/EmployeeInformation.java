@@ -16,7 +16,7 @@ public class EmployeeInformation {
     private static final Scanner SCANNER = new Scanner(System.in);
     private static Bundle bundleStop;
     @Reference
-    private static Validation validate;
+    static Validation validate;
 
     public static void selectChoice() {
 

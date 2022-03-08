@@ -13,9 +13,9 @@ import java.util.Map;
  * Enabling insert, update, select and delete in the database using SQL queries.
  */
 public class EmployeeDaoImpl implements EmployeeDao {
-    
+
     @Reference
-    private static DatabaseConnect databaseConnection;
+    static DatabaseConnect databaseConnection;
 
     public boolean addNewEmployee(final Employee employee) {
         final String addQuery = "INSERT INTO employeedetails (id, name, salary, number, date, is_deleted) values (?, ?, ?, ?, ?, ?)";

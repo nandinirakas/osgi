@@ -8,7 +8,7 @@ import java.time.LocalDate;
 /**
  * Validation for employee id, name, phone number, joining date, salary.
  */
-@Component(immediate = true, name = "employeeValidation")
+@Component
 public class Validator implements Validation {
     /**
      * Checks whether id contains only numbers.
