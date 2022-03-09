@@ -21,8 +21,20 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <osgi.version>7.0.0</osgi.version>
         <maven-bundle-plugin.version>5.1.4</maven-bundle-plugin.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.core</artifactId>
+            <version>${osgi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <pluginManagement>

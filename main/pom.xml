@@ -17,16 +17,10 @@
         main OSGi bundle project.
     </description>
 
-    <properties>
-        <osgi.version>7.0.0</osgi.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>osgi.core</artifactId>
-            <version>${osgi.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.launchclub</groupId>
