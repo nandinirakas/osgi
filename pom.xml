@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.launchclub</groupId>
+    <artifactId>employeeManagement</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>databaseConnection</module>
+        <module>exception</module>
+        <module>validation</module>
+        <module>employee</module>
+        <module>employeeFeature</module>
+        <module>main</module>
+        <module>getInputs</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <osgi.version>7.0.0</osgi.version>
+        <maven-bundle-plugin.version>5.1.4</maven-bundle-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.core</artifactId>
+            <version>${osgi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>${maven-bundle-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <instructions>
+                            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                            <Bundle-Version>${project.version}</Bundle-Version>
+                            <Bundle-Activator>com.launchclub.Activator</Bundle-Activator>
+                        </instructions>
+                    </configuration>
+                </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <maxmem>256M</maxmem>
+                </configuration>
+            </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
