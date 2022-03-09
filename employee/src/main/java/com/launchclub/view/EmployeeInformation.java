@@ -9,11 +9,9 @@ import org.osgi.framework.Bundle;
 
 import java.sql.Date;
 import java.util.Map;
-import java.util.Scanner;
 
 public class EmployeeInformation {
 
-    private static final Scanner SCANNER = new Scanner(System.in);
     private static Bundle bundleStop;
     private static final Validator VALIDATE = new Validator();
 
@@ -21,7 +19,7 @@ public class EmployeeInformation {
         int choice;
 
         do {
-            System.out.println("EMPLOYEE MANAGEMENT\n1.ADD DETAILS\n2.VIEW DETAILS\n3.DELETE DETAILS\n4.UPDATE DETAILS\n5.EXIT\nEnter your choice:");
+            System.out.println("EMPLOYEE MANAGEMENT\n1.ADD DETAILS\n2.VIEW DETAILS\n3.DELETE DETAILS\n4.UPDATE DETAILS\n5.EXIT");
             choice = Integer.parseInt(EmployeeInformation.getChoice());
 
             switch (choice) {
@@ -38,7 +36,7 @@ public class EmployeeInformation {
                     EmployeeInformation.updateEmployeeDetails();
                     break;
                 case 5:
-                    SCANNER.close();
+                    UserInputs.SCANNER.close();
 
                     try {
                         bundleStop.stop();
@@ -119,7 +117,7 @@ public class EmployeeInformation {
      * Gets employee phone number
      */
     public static String getEmployeePhoneNumber() {
-        final String phoneNumber = (UserInputs.getString("Enter employee phone number: \nPress ~ to exit to main menu"));
+        final String phoneNumber = UserInputs.getString("Enter employee phone number: \nPress ~ to exit to main menu");
 
         EmployeeInformation.returnToMainMenu(phoneNumber);
 
@@ -158,7 +156,7 @@ public class EmployeeInformation {
      * Gets choice for CRUD operation from user
      */
     public static String getChoice() {
-        final String choice = SCANNER.next().trim();
+        final String choice = UserInputs.getString("Enter your choice:");
 
         if (EmployeeValidator.validateChoice(choice)) {
             return choice;
@@ -294,7 +292,7 @@ public class EmployeeInformation {
         final String choiceNo = "no";
 
         while (true) {
-            final String option = SCANNER.next().trim();
+            final String option = UserInputs.getString("Enter your option:");
 
             EmployeeInformation.returnToMainMenu(option);
 

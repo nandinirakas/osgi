@@ -18,7 +18,6 @@
     </description>
 
     <properties>
-        <maven-bundle-plugin.version>5.1.4</maven-bundle-plugin.version>
         <osgi.version>7.0.0</osgi.version>
     </properties>
 
@@ -41,8 +40,13 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>${maven-bundle-plugin.version}</version>
-                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>
+                            com.launchclub*;version=${project.version}
+                        </Export-Package>
+                    </instructions>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
