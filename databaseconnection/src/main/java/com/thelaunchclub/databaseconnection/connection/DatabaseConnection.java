@@ -9,9 +9,9 @@ import java.util.Properties;
 
 public class DatabaseConnection {
 
-    PropertyFile propertyFile = new PropertyFile();
+    private static PropertyFile propertyFile = new PropertyFile();
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         Properties props = propertyFile.readProperties();
         final String url = props.getProperty("db.url");
         final String name = props.getProperty("db.name");

@@ -18,12 +18,10 @@ import java.util.Map;
  */
 public class EmployeeDaoImpl implements EmployeeDao {
 
-    private static final DatabaseConnection DATABASE_CONNECTION = new DatabaseConnection();
-
     public boolean addNewEmployee(final Employee employee) {
         final String addQuery = "INSERT INTO employeedetails (id, name, salary, number, date, is_deleted) values (?, ?, ?, ?, ?, ?)";
 
-        try (Connection connection = DATABASE_CONNECTION.getConnection();
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(addQuery);) {
             preparedStatement.setInt(1, employee.getEmployeeId());
             preparedStatement.setString(2, employee.getEmployeeName());
@@ -41,7 +39,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public boolean deleteEmployee(final int employeeId) {
         final String deleteQuery = "UPDATE employeedetails set is_deleted = ? WHERE id = ? and is_deleted = ?";
 
-        try (Connection connection = DATABASE_CONNECTION.getConnection();
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);) {
             preparedStatement.setBoolean(1, true);
             preparedStatement.setInt(2, employeeId);
@@ -57,7 +55,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         final Map<Integer, Employee> employees = new HashMap<>();
         String selectQuery = "SELECT id, name, salary, number, date FROM employeedetails WHERE is_deleted = false";
 
-        try (Connection connection = DATABASE_CONNECTION.getConnection();
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(selectQuery);
              ResultSet resultSet = preparedStatement.executeQuery();){
 
@@ -79,7 +77,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     public boolean updateEmployeeDetails(final Employee employee) {
 
-        try (Connection connection = DATABASE_CONNECTION.getConnection();) {
+        try (Connection connection = DatabaseConnection.getConnection();) {
             final StringBuffer updateQueryBuffer = new StringBuffer();
             updateQueryBuffer.append("UPDATE employeedetails set");
             boolean hasNextValue = false;
