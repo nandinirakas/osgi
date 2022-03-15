@@ -1,0 +1,8 @@
+.gitignore.txt
+databaseconnection/target/classes/com/thelaunchclub/databaseconnection/connection/DatabaseConnection.class
+databaseconnection/target/classes/com/thelaunchclub/databaseconnection/exception/ConnectionFailedException.class
+databaseconnection/target/classes/com/thelaunchclub/databaseconnection/exception/PropertyFileNotFoundException.class
+databaseconnection/target/classes/com/thelaunchclub/databaseconnection/readproperties/PropertyFile.class
+databaseconnection/target/classes/META-INF/MANIFEST.MF
+databaseconnection/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+databaseconnection/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
