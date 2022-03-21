@@ -13,6 +13,4 @@ public interface EmployeeRestController {
     boolean deleteEmployee(final int employeeId);
 
     boolean updateEmployeeDetails(final Employee employee);
-
-    String getString();
 }

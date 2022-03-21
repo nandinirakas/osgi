@@ -12,6 +12,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.PUT;
 import javax.ws.rs.DELETE;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ import java.util.List;
 public class EmployeeRestControllerImpl extends EmployeeController implements EmployeeRestController  {
 
     /**
-     * For adding new employee.
+     * Adds new employee using api.
      *
      * @param employee
      */
@@ -31,7 +32,7 @@ public class EmployeeRestControllerImpl extends EmployeeController implements Em
     }
 
     /**
-     * For showing all employees.
+     * Shows all employees using api and pagination.
      *
      * @param page
      * @param limit
@@ -58,7 +59,7 @@ public class EmployeeRestControllerImpl extends EmployeeController implements Em
     }
 
     /**
-     * For deleting employee.
+     * Deletes employee using api.
      *
      * @param employeeId
      */
@@ -69,7 +70,7 @@ public class EmployeeRestControllerImpl extends EmployeeController implements Em
     }
 
     /**
-     * For updating employee.
+     * Update employee using api.
      *
      * @param employee
      */
@@ -79,12 +80,5 @@ public class EmployeeRestControllerImpl extends EmployeeController implements Em
     @PUT
     public boolean updateEmployeeDetails(final Employee employee) {
         return super.updateEmployeeDetails(employee);
-    }
-
-    @Path("/get")
-    @Produces("application/json")
-    @GET
-    public String getString(){
-        return "Nandini";
     }
 }
