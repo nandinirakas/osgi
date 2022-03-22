@@ -46,7 +46,6 @@
                         <instructions>
                             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                             <Bundle-Version>${project.version}</Bundle-Version>
-                            <Bundle-Activator>com.thelaunchclub.Activator</Bundle-Activator>
                         </instructions>
                     </configuration>
                 </plugin>
