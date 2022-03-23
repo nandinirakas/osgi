@@ -23,7 +23,7 @@ public class EmployeeDetails {
         int choice;
 
         do {
-            System.out.println("EMPLOYEE MANAGEMENT\n1.ADD DETAILS\n2.VIEW DETAILS\n3.SELECT EMPLOYEE\n4.DELETE DETAILS\n5.UPDATE DETAILS\n6.EXIT");
+            LOGGER.info("EMPLOYEE MANAGEMENT\n1.ADD DETAILS\n2.VIEW DETAILS\n3.SELECT EMPLOYEE\n4.DELETE DETAILS\n5.UPDATE DETAILS\n6.EXIT");
             choice = Integer.parseInt(getChoice());
 
             switch (choice) {
@@ -215,7 +215,7 @@ public class EmployeeDetails {
     public void selectEmployee() {
 
         try {
-            System.out.println(EMPLOYEE_CONTROLLER.searchEmployeeDetail(getEmployeeId()));
+            LOGGER.info(EMPLOYEE_CONTROLLER.searchEmployeeDetail(getEmployeeId()));
         } catch (CustomException e) {
             LOGGER.error(e);
         }

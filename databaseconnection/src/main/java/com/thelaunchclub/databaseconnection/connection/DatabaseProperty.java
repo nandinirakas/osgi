@@ -4,6 +4,9 @@ import org.osgi.service.component.annotations.Component;
 
 import java.util.Map;
 
+/**
+ * Gets property file using component.
+ */
 @Component(immediate = true, name = "database")
 public class DatabaseProperty {
 
