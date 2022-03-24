@@ -36,8 +36,8 @@ public class RestService {
             bean.setProvider(new JacksonJsonProvider());
             bean.setServiceBean(new EmployeeRestControllerImpl());
             server = bean.create();
-            System.out.println(server);
-           // EMPLOYEE_DETAILS.selectChoice();
+
+            EMPLOYEE_DETAILS.selectChoice();
         } catch (Exception e) {
             LOGGER.error(e);
         }
@@ -48,7 +48,6 @@ public class RestService {
      */
     @Deactivate
     public void deactivate() {
-
         try {
 
             if (server != null) {

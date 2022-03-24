@@ -229,7 +229,7 @@ public class EmployeeDetails {
         try {
             final int employeeId = getEmployeeId();
 
-            if(EMPLOYEE_CONTROLLER.deleteEmployee(employeeId)) {
+            if (EMPLOYEE_CONTROLLER.deleteEmployee(employeeId)) {
                 LOGGER.info("Data deleted in database successfully");
             }
         } catch (CustomException e) {

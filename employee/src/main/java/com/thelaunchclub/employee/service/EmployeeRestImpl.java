@@ -27,7 +27,7 @@ public class EmployeeRestImpl implements EmployeeRest {
         final Map employeeList = new HashMap<>();
         boolean isAdded = false;
 
-        if(!EMPLOYEE_DATABASE.getEmployees().containsKey(employee.getEmployeeId())) {
+        if (!EMPLOYEE_DATABASE.getEmployees().containsKey(employee.getEmployeeId())) {
             isAdded = EMPLOYEE_DATABASE.addNewEmployee(employee);
         }
         employeeList.put("Employee added", isAdded);
@@ -44,14 +44,14 @@ public class EmployeeRestImpl implements EmployeeRest {
         final List<Employee> list = new ArrayList<>(EMPLOYEE_DATABASE.getEmployees().values());
         int start = 0, end = 0;
 
-        if(page > 0 && limit >= 0) {
+        if (page > 0 && limit >= 0) {
             start = (page - 1) * limit;
             end = limit * page;
         }
 
-        if(start < list.size() && end < list.size()) {
+        if (start < list.size() && end < list.size()) {
             return list.subList(start, end);
-        } else if(start < list.size()) {
+        } else if (start < list.size()) {
             return list.subList(start, list.size());
         } else {
             final List emptyList = new ArrayList();
@@ -96,7 +96,7 @@ public class EmployeeRestImpl implements EmployeeRest {
         final List employeeList = new ArrayList();
         final Employee selectEmployee = EMPLOYEE_DATABASE.selectEmployee(employeeId);
 
-        if(selectEmployee == null) {
+        if (selectEmployee == null) {
             employeeList.add("Employee Id not found");
         } else {
             employeeList.add(selectEmployee);

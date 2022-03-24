@@ -66,18 +66,18 @@ public class EmployeeDaoImpl implements EmployeeDao {
      */
     public Map<Integer, Employee> getEmployees() {
         final Map<Integer, Employee> employees = new HashMap<>();
-        String selectQuery = "SELECT id, name, salary, number, date FROM employeedetails WHERE is_deleted = false";
+        final String selectQuery = "SELECT id, name, salary, number, date FROM employeedetails WHERE is_deleted = false";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(selectQuery);
              ResultSet resultSet = preparedStatement.executeQuery();){
 
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                double salary = resultSet.getDouble("salary");
-                String number = resultSet.getString("number");
-                Date date = resultSet.getDate("date");
+                final int id = resultSet.getInt("id");
+                final String name = resultSet.getString("name");
+                final double salary = resultSet.getDouble("salary");
+                final String number = resultSet.getString("number");
+                final Date date = resultSet.getDate("date");
 
                 Employee employee = new Employee(id, name, salary, number, date);
                 employees.put(id, employee);
@@ -97,18 +97,18 @@ public class EmployeeDaoImpl implements EmployeeDao {
         final String getEmployee = "Select id, name, salary, number, date FROM employeedetails WHERE id = ?";
         Employee employee = null;
 
-        try (final Connection connection = DatabaseConnection.getConnection();
-             final PreparedStatement statement = connection.prepareStatement(getEmployee);) {
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(getEmployee);) {
             statement.setInt(1, employeeId);
 
             try (ResultSet resultSet = statement.executeQuery();) {
 
                 while (resultSet.next()) {
-                    int id = resultSet.getInt("id");
-                    String name = resultSet.getString("name");
-                    double salary = resultSet.getDouble("salary");
-                    String number = resultSet.getString("number");
-                    Date date = resultSet.getDate("date");
+                    final int id = resultSet.getInt("id");
+                    final String name = resultSet.getString("name");
+                    final double salary = resultSet.getDouble("salary");
+                    final String number = resultSet.getString("number");
+                    final Date date = resultSet.getDate("date");
 
                     employee = new Employee(id, name, salary, number, date);
                 }
@@ -132,7 +132,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
             boolean hasNextValue = false;
             int name = 1, salary = 1, number = 1, date = 1, id = 1, count = 0;
 
-            if(employee.getEmployeeId() != 0) {
+            if (employee.getEmployeeId() != 0) {
 
                 if (employee.getEmployeeName() != null) {
                     updateQueryBuffer.append(" name = ?");

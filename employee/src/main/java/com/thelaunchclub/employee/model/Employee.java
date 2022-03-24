@@ -2,7 +2,6 @@ package com.thelaunchclub.employee.model;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 
 import java.sql.Date;
 
@@ -17,7 +16,7 @@ public class Employee {
     @NotNull
     private double salary;
     @NotNull
-    @Size(max = 10)
+    @Max(10)
     private String phoneNumber;
     @NotNull
     private Date date;
